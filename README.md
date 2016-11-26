@@ -8,7 +8,7 @@ Once the arduino has been programmed, you need only deal with ducky scripts on a
 The instructions are for an arduino pro micro, it should work on any arduino using an atmega32u4 chip such as the leonardo.
 Simply upload Duckduino-microSD to your arduino, forma your microSD to FAT32 and save your script on the microSD card titled script.txt
 Lastly, connect a microsd breakout board using the pins below
-
+```
 Arduino ||| microSD module
 
 VCC  --->   VCC
@@ -22,6 +22,7 @@ D16  --->   MOSI
 GND  --->   GND
 
 D4   --->   CS
+```
 
 ## Caveats
 Long lines of strings may crash the arduino due to taking up too much RAM, if you have a line "STRING ..." over 300 characters then split it into separate lines of strings, this won't affect how your script runs, it just reduces how much of your script is held in memory at any one time.
