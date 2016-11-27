@@ -2,6 +2,8 @@
  * Author: Seytonic
  *         https://twitter.com/seytonic
  *         https://www.youtube.com/seytonic
+ * GIT:
+ *         https://github.com/Seytonic/Duckduino-microSD
  */
 
 
