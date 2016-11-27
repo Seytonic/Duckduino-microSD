@@ -5,6 +5,9 @@ Interpreter that runs on an arduino, decodes and executes ducky script on a micr
 Once the arduino has been programmed, you need only deal with ducky scripts on a microSD card. No reprogramming the arduino to change scripts!
 
 ## Setup
+
+[![video link](http://imgur.com/2a1fe002-68fa-4046-b3a8-83e6fa2a22fc)](https://www.youtube.com/watch?v=ksvo1WDYQ7s)
+
 The instructions are for an arduino pro micro, it should work on any arduino using an atmega32u4 chip such as the leonardo.
 Simply upload Duckduino-microSD to your arduino, forma your microSD to FAT32 and save your script on the microSD card titled script.txt
 Lastly, connect a microsd breakout board using the pins below
