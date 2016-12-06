@@ -216,6 +216,10 @@ void Press(String b)
   {
     Keyboard.press(KEY_F12);
   }
+    else if (b.equals("SPACE"))
+  {
+    Keyboard.press(' ');
+  } 
 }
 
 void loop() {
