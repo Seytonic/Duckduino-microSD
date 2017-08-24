@@ -57,10 +57,10 @@ void setup() {
   Keyboard.end();
 }
 
-void Line(String line)
+void Line(String l)
 {
-  int space_1 = line.indexOf(" ");
-  String firstWord = line.substring(0,space_1);
+  int space_1 = l.indexOf(" ");
+  String firstWord = l.substring(0,space_1);
   
   if (space_1 == -1)
   {
@@ -78,7 +78,7 @@ void Line(String line)
   else if(firstWord == "REM"){}
   else
   {
-      String remain = line;
+      String remain = l;
 
       while(remain.length() > 0)
       {
