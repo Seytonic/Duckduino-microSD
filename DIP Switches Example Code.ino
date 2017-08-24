@@ -17,21 +17,15 @@ boolean first = true;
 
 void setup() { 
   String dip = ""; // Name of the file that will be opened
-
-  // Sets the given pins as switches for the dip switches
-  pinMode(6, INPUT_PULLUP);
-  pinMode(7, INPUT_PULLUP);
-  pinMode(8, INPUT_PULLUP);
-  pinMode(9, INPUT_PULLUP);
   
+  // Sets the given pins as switches for the dip switches
   // Switches are checked, dip string is contructed
-  if (digitalRead(6) == LOW){dip += "1";} else {dip += "0";}
-  if (digitalRead(7) == LOW){dip += "1";} else {dip += "0";}
-  if (digitalRead(8) == LOW){dip += "1";} else {dip += "0";}
-  if (digitalRead(9) == LOW){dip += "1";} else {dip += "0";}
-
+  for (int pin = 6; pin < 10; pin++) {
+    pinMode(pin, INPUT_PULLUP);
+    if (digitalRead(pin) == LOW){dip += "1";} else {dip += "0";}
+  }
+  
   dip += ".txt";
-
 
   if (!SD.begin(4)) {
     return;
@@ -39,6 +33,7 @@ void setup() {
   
   // Desired file is opened
   myFile = SD.open(dip);
+  
   if (myFile) {
     Keyboard.begin();
     
@@ -57,7 +52,6 @@ void setup() {
     Line(line);
     
     myFile.close();
-  } else {
   }
 
   Keyboard.end();
@@ -66,20 +60,22 @@ void setup() {
 void Line(String l)
 {
   int space_1 = l.indexOf(" ");
+  String firstWord = l.substring(0,space_1);
+  
   if (space_1 == -1)
   {
     Press(l);
   }
-  else if (l.substring(0,space_1) == "STRING")
+  else if (firstWord == "STRING")
   {
-    Keyboard.print(l.substring(space_1 + 1));
+    Keyboard.print(firstWord);
   }
-  else if (l.substring(0,space_1) == "DELAY")
+  else if (firstWord == "DELAY")
   {
-    int delaytime = l.substring(space_1 + 1).toInt();
+    int delaytime = firstWord.toInt();
     delay(delaytime);
   }
-  else if(l.substring(0,space_1) == "REM"){}
+  else if(firstWord == "REM"){}
   else
   {
       String remain = l;
