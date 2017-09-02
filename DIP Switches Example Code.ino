@@ -112,6 +112,9 @@ void Press(String b)
     char c = b[0];
     Keyboard.press(c);
   }
+  else if(b.equals("SPACE")){
+    Keyboard.print(" ");
+  }   
   else if (b.equals("ENTER"))
   {
     Keyboard.press(KEY_RETURN);
