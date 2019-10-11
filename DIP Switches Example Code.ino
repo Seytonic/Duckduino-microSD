@@ -148,6 +148,9 @@ void Press(String b)
   {
     Keyboard.press(KEY_RIGHT_ARROW);
   }
+    else if(b.equals("SPACE")){
+    Keyboard.print(" ");
+  }   
     else if (b.equals("DELETE"))
   {
     Keyboard.press(KEY_DELETE);
